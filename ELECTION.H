@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<conio.h>
 #include<string.h>
 #include<stdlib.h>
 
@@ -71,7 +70,7 @@ int authenticateAdmin(){
         int i=0;
         for(i=0;i<5;i++)
         {
-            password[i]=getch();
+           
             printf("%c",'*');
         }
         password[i]='\0';
@@ -169,7 +168,7 @@ void deleteIllegalVote(char userID[15])
     fclose(fcp);
     remove("tmp.txt");
     printf("\nVote deleted successfully\nPress any key to continue...");
-    getch();
+
 }
 
 int getWinner(){
@@ -292,7 +291,7 @@ void adminPanel()
         }
 
         printf("\n\nLOGGED IN SUCCESSFULLY (Press Enter)");
-		getch();
+	
 
         while(1)
         {
@@ -343,7 +342,7 @@ void adminPanel()
                     return;
                 default:
                     printf("Invalid Option");
-					getch();
+					
             }
 			
         }
@@ -413,19 +412,19 @@ void studentPanel()
         if(isValid(userID)!=1)
         {
             printf("\n  Invalid User ID(Press Enter)");
-            getch();
+            
             continue;
         }
         if(isBanned(userID)!=0)
         {
             printf("\nThis User ID is currently banned...\nContact Admin for the reason...(Press Enter to continue)");
-            getch();
+            
             continue;
         }
         if(isVoted(userID)!=0)
         {
             printf("\n  Your PRN entered is already voted\n  Contact Admin for furthur query");
-            getch();
+           
             continue;
         }
         printf("\n\n  Candidates for election:");
@@ -434,16 +433,16 @@ void studentPanel()
             printf("\n  %d. %s",i+1,candidateArray[i].cname);
         }
         printf("\n\n  Your Vote(Enter Number):");
-        voteInput=getch();
+        voteInput=5;
         printf("*");
         if(voteInput-48 < 1 || voteInput-48 > numberOfCandidates)
         {
             printf("\nInvalid Vote\nTry Again...");
-            getch();
+            
             continue;
         }
         saveVote(userID,voteInput);
         printf("\n\nThanks for your precious vote(Press Enter)");
-        getch();
+       
     }
 };

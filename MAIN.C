@@ -1,4 +1,4 @@
-#include"election.h"
+#include"ELECTION.H"
 
 int main(){
     while(1){
@@ -17,7 +17,7 @@ int main(){
                 return 0;
             default:
                 printf("\nInvalid option");
-                getch();
+               
         }
     }
     return 0;
